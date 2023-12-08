@@ -1,0 +1,33 @@
+{
+  "npmScope": "city-viewer",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "nx.json": "*",
+    "*.config.js": "*",
+    "tsconfig.base.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e", "storybook"]
+      }
+    }
+  },
+  "projects": {
+    "city-viewer-frontend": {
+      "tags": ["scope:frontend", "type:app"]
+    },
+    "city-viewer-backend": {
+      "root": "server",
+      "sourceRoot": "/server/",
+      "tags": ["scope:backend", "type:app"]
+    }
+  }
+}
